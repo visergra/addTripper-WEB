@@ -1,0 +1,40 @@
+.header-main-container {
+    background-image: url("../../shared/images/header_background.jpg");
+    height: 100%;
+    /* background-size: cover; */
+}
+
+.header-logo {
+    color: white;
+    font-size: 24px;
+    
+}
+
+.logo-bold{
+    font-weight: bold;
+}
+
+.header-title {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.header-description {
+    color: white;
+    text-align: center;
+    font-weight: 300;
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: transparent;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#navbarTogglerDemo02 > ul > li.nav-item > a {
+    color: white;
+}

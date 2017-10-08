@@ -1,0 +1,10 @@
+.error-message-login, .error-message-signup {
+    background: #F02B63;
+    box-sizing: border-box;
+    color: #fff;
+    margin: 20px auto;
+    height: 40px;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+}

@@ -1,0 +1,10 @@
+<div class="container autocomplete-places-input">
+    <form (ngSubmit)="onSubmitSearchTrip(searchForm)" #searchForm="ngForm">
+      <div class="form-group">
+          <app-autocomplete-places (onChange)="onTripLocationChange($event)"></app-autocomplete-places>
+          <app-datepicker (onChange)="onTripDateChange($event)"></app-datepicker>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block explore-button">Explore</button>      
+    </form>
+  </div>
+  

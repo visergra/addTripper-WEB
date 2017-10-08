@@ -1,0 +1,48 @@
+.create-trip-button{
+    background-color: #ee6e73;
+    /* background: #F02B63; */
+    border-color: transparent;
+    margin-top: 20px;
+}
+
+.body-main-container{
+    padding: 0 30px 0 30px;
+}
+
+.body-main-title{
+    color: #00bfa5;
+    padding: 30px 0 0 0;
+    text-align: center;
+}
+
+.steps{
+    padding-top: 20px;
+}
+
+.step{
+    display: inline-block;
+    width: 230px;
+    padding-top: 10px;
+}
+
+.number-step {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: solid 2px #00bfa5;
+    text-align: center;
+    font-size: 24px;
+    color: #00bfa5;
+    padding-top: 2px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.title-step{
+    display: inline-block;
+    padding-left: 30px;   
+}
+
+.desc-step {
+    padding-left: 30px;
+}

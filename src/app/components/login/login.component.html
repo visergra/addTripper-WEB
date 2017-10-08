@@ -1,0 +1,39 @@
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" [hidden]="hideModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="loginModalLabel">Login</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        </div>
+        <div class="modal-body">
+
+          <form class="login-form" (ngSubmit)="onSubmitLogin(loginForm)" #loginForm="ngForm">
+
+            <div class="form-group">
+              <label class="control-label" for="username">Email</label>
+              <input name="username" id="username" type="email" maxlength="50" class="form-control" [(ngModel)]="user.username" required>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="password">Password</label>
+              <input name="password" id="password" type="password" maxlength="25" class="form-control" placeholder="" length="40" [(ngModel)]="user.password" required>
+            </div>
+            <div class="error-message-login" *ngIf="error">
+                {{ error }}
+            </div>
+
+            <p class="account-message">
+              Don't have an account? <a href="#signupModal" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">Sign up</a>
+            </p>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Sign In</button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+.footer-main {
+    background-color: #ee6e73;
+    color: white;
+    padding: 20px 0 20px 30px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0px;
+}
