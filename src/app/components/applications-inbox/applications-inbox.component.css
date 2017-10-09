@@ -8,25 +8,27 @@
     margin-right: 0;
 }
 
+
 .message-header {
-    /* background-color: #00bfa5;
-    border-color: #00bfa5; */
-    background-color: #c9ccd3 ;
+background-color: #c9ccd3 ;
     border-color: #c9ccd3 ;
+    background-color: #f7f5f5 ;
+    border-color: #f7f5f5;
     font-size: 16px;
     font-weight: 400;
     padding-top: 7px;
     padding-bottom: 7px;
     color: #212121;
-    color: black;
-    opacity: 0.6;
+    border-bottom: 1px solid #32b496;;
+    opacity: 0.9;
+    font-weight: 300;
 }
 
 .application-status-div{
     text-align: right;
     width: 100%;
     padding-bottom: 0px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .application-status-buttons{
     text-align: left;
@@ -36,14 +38,15 @@
     font-weight: bold;
     color: #52487a;
     color: #01579b;
+    font-weight: 400;
 }
 
 .btn-approve{
-    color: #00bfa5;  
+    color: #32b496;  
 }
 
 .btn-reject{
-    color: #ee6e73;  
+    color: #F4656A;  
 }
 
 .profile-pic{
@@ -57,6 +60,9 @@
     position: absolute;
     left: 90px;
     top: 30px;
+    color: #212121;
+    opacity: 0.8;
+    font-weight: 200;
 }
 
 .application-date {

@@ -25,6 +25,7 @@ export class AutocompletePlacesComponent implements OnInit {
             let place: google.maps.places.PlaceResult = autocomplete.getPlace();
             this.location.address = place.formatted_address;
             this.location.type = "Point";
+            this.location.coordinates = [];
             this.location.coordinates.push(Number(place.geometry.location.lng()));
             this.location.coordinates.push(place.geometry.location.lat());
             this.onChangeLocation();

@@ -33,6 +33,8 @@ import { OutboxPageComponent } from './components/outbox-page/outbox-page.compon
 import { ReceivedFilterPipe } from './pipes/received-filter.pipe';
 import { TripCreatePageComponent } from './components/trip-create-page/trip-create-page.component';
 import { TripFormCreateComponent } from './components/trip-form-create/trip-form-create.component';
+import { TripSearchListComponent } from './components/trip-search-list/trip-search-list.component';
+import { TripSearchListPageComponent } from './components/trip-search-list-page/trip-search-list-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -41,7 +43,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'inbox', component: InboxPageComponent, canActivate: [ IsAuthenticatedGuard ] },
   { path: 'outbox', component: OutboxPageComponent, canActivate: [ IsAuthenticatedGuard ] },
-  { path: 'new-trip', component: TripCreatePageComponent, canActivate: [ IsAuthenticatedGuard ] }
+  { path: 'trips/new', component: TripCreatePageComponent, canActivate: [ IsAuthenticatedGuard ] },
+  { path: 'trips/search', component: TripSearchListPageComponent }
 ]
 
 @NgModule({
@@ -64,7 +67,9 @@ const routes: Routes = [
     OutboxPageComponent,
     ReceivedFilterPipe,
     TripCreatePageComponent,
-    TripFormCreateComponent
+    TripFormCreateComponent,
+    TripSearchListComponent,
+    TripSearchListPageComponent
   ],
   imports: [
     BrowserModule,

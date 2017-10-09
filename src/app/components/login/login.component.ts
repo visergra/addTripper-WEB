@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 import { User } from '../../shared/models/user.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +12,9 @@ export class LoginComponent implements OnInit {
   user: User = new User();
   error: string;
   hideModal: boolean;
+
+  @Output() modalClose : EventEmitter<any> = new EventEmitter<any>();
+  
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -29,6 +32,11 @@ export class LoginComponent implements OnInit {
       },
       (error) => { this.error = error; }
     );
+  }
+
+  closeModal( $event ) {
+    this.router.navigate([{outlets: {modal: null}}]);
+    this.modalClose.next($event);
   }
 
 }

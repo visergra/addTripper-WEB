@@ -1,6 +1,7 @@
 .header-main-container {
     background-image: url("../../shared/images/header_background.jpg");
     height: 100%;
+    padding-bottom: 60px;
     /* background-size: cover; */
 }
 
