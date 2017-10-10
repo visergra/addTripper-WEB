@@ -1,5 +1,4 @@
 import { Trip } from './../models/trip.model';
-import { Location } from './../models/location.model';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -32,8 +31,8 @@ export class TripService {
       .catch(this.handleError);
   }
 
-  getTrips(location: Location, date: Date): Observable<Array<Trip>> {
-    return this.http.get(`${this.baseUrl}/trips/?lng=${location.coordinates[0]}&lat=${location.coordinates[1]}&startDate=${date}`, this.options)
+  getTrips(lng: number, lat: number, date: Date): Observable<Array<Trip>> {
+    return this.http.get(`${this.baseUrl}/trips/?lng=${lng}&lat=${lat}&startDate=${date}`, this.options)
     .map(res => res.json())
     .catch(this.handleError);
   }

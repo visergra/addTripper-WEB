@@ -3,6 +3,39 @@
     padding-right: 0;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
     background-color: white;
     width: 100%;
+}
+
+.modal-title{
+    color: #32b496;
+    font-weight: 200;
+    width: 100%;
+}
+
+.trip-title{
+    color: #212121;
+    opacity: 0.9;
+    font-size: 18px;
+    font-weight: 400; 
+}
+
+.trip-text{
+    color: #212121;
+    opacity: 0.9;
+    font-weight: 300; 
+}
+
+.scrollable {
+    overflow-y: scroll;
+    height: 80vh;
+    width: 100%;
+}
+
+.trip-div{
+    background-color: #f7f5f5;
+    border-color: #f7f5f5;
+    border-bottom: 1px solid #32b496;
 }

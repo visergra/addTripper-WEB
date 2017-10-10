@@ -1,55 +1,54 @@
 .scrollable {
     overflow-y: scroll;
     height: 80vh;
-    width: 100%;   
+    width: 100%;
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
     margin-right: 0;
 }
 
-
 .message-header {
-background-color: #c9ccd3 ;
-    border-color: #c9ccd3 ;
-    background-color: #f7f5f5 ;
+    background-color: #c9ccd3;
+    border-color: #c9ccd3;
+    background-color: #f7f5f5;
     border-color: #f7f5f5;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
     padding-top: 7px;
     padding-bottom: 7px;
     color: #212121;
-    border-bottom: 1px solid #32b496;;
+    border-bottom: 1px solid #32b496;
     opacity: 0.9;
-    font-weight: 300;
+    font-weight: 400;
 }
 
-.application-status-div{
+.application-status-div {
     text-align: right;
     width: 100%;
     padding-bottom: 0px;
     /* font-weight: bold; */
 }
-.application-status-buttons{
+
+.application-status-buttons {
     text-align: left;
 }
 
-.application-status{
+.application-status {
     font-weight: bold;
     color: #52487a;
     color: #01579b;
     font-weight: 400;
 }
 
-.btn-approve{
-    color: #32b496;  
+.btn-approve {
+    color: #32b496;
 }
 
-.btn-reject{
-    color: #F4656A;  
+.btn-reject {
+    color: #F4656A;
 }
 
-.profile-pic{
+.profile-pic {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -70,4 +69,3 @@ background-color: #c9ccd3 ;
     width: 100%;
     padding-bottom: 10px;
 }
-

@@ -3,7 +3,7 @@ import { TripService } from './shared/services/trip.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from '@agm/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -35,6 +35,7 @@ import { TripCreatePageComponent } from './components/trip-create-page/trip-crea
 import { TripFormCreateComponent } from './components/trip-form-create/trip-form-create.component';
 import { TripSearchListComponent } from './components/trip-search-list/trip-search-list.component';
 import { TripSearchListPageComponent } from './components/trip-search-list-page/trip-search-list-page.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -69,12 +70,14 @@ const routes: Routes = [
     TripCreatePageComponent,
     TripFormCreateComponent,
     TripSearchListComponent,
-    TripSearchListPageComponent
+    TripSearchListPageComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     CountryPickerModule.forRoot({
       baseUrl: ('../assets/data-countries/')

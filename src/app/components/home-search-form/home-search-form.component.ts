@@ -1,7 +1,6 @@
-import { Component, NgZone, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, NgZone, OnInit} from '@angular/core';
 import { Location } from '../../shared/models/location.model';
 import { Trip } from '../../shared/models/trip.model';
-import { TripService } from '../../shared/services/trip.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,14 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-search-form.component.css']
 })
 export class HomeSearchFormComponent implements OnInit {
-  trips: Array<Trip> = [];
   location: Location = new Location();
-  error: string;
   startTime: Date;
 
-  @Output() onSearch: EventEmitter<Object> =  new EventEmitter<Object>();
-
-  constructor(private tripService: TripService, private router: Router) { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,16 +26,9 @@ export class HomeSearchFormComponent implements OnInit {
   }
 
   onSubmitSearchTrip(searchForm): void {
-    this.tripService.getTrips(this.location,this.startTime).subscribe(
-      trips => {
-      this.trips = trips;
-      console.log(trips);
-      searchForm.reset();
-      this.router.navigate(['/trips/search']);
-      },
-      (error) => { this.error = error; }
-    );
+    this.router.navigate(['/trips/search'], { queryParams: { lng: this.location.coordinates[0], lat: this.location.coordinates[1], startDate: this.startTime.getTime()}});
   }
+
 
   toDate(date: string): any {
     let jsonDate = JSON.parse(JSON.stringify(date));

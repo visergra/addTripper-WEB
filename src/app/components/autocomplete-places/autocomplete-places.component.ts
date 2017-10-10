@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, NgZone, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, ElementRef, NgZone, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
 import {} from '@types/googlemaps';
 import { Location } from '../../shared/models/location.model';
