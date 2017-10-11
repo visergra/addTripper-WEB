@@ -16,10 +16,17 @@
     font-size: 18px;
     padding-top: 7px;
     padding-bottom: 7px;
-    color: #212121;
+    color: black;
     border-bottom: 1px solid #32b496;
     opacity: 0.9;
     font-weight: 400;
+}
+
+.modal-title{
+    color: #32b496;
+    font-weight: 200;
+    width: 100%;
+    margin-bottom: 7px;
 }
 
 .application-status-div {
@@ -38,6 +45,24 @@
     color: #52487a;
     color: #01579b;
     font-weight: 400;
+}
+.tabs-inbox{
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.tab-active{
+    color: #32b496;  
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.tab-inactive{ 
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .btn-approve {
@@ -60,8 +85,9 @@
     left: 90px;
     top: 30px;
     color: #212121;
-    opacity: 0.8;
-    font-weight: 200;
+    opacity: 0.9;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .application-date {

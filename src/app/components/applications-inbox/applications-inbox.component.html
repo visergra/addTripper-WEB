@@ -1,10 +1,11 @@
-<div class="container">
+<div class="container"><h4 class="modal-title">Applications</h4></div>
+<div class="container tabs-inbox">
     <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/inbox']" href="#">Received</a>
+          <a class="nav-link active tab-active" [routerLink]="['/inbox']" href="#">Received</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/outbox']" href="#">Sent</a>
+          <a class="nav-link tab-inactive" [routerLink]="['/outbox']" href="#">Sent</a>
         </li>
       </ul>
 </div>

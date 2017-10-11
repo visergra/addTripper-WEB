@@ -36,6 +36,7 @@ import { TripFormCreateComponent } from './components/trip-form-create/trip-form
 import { TripSearchListComponent } from './components/trip-search-list/trip-search-list.component';
 import { TripSearchListPageComponent } from './components/trip-search-list-page/trip-search-list-page.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { AmDifferencePipe } from './pipes/am-difference.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -71,7 +72,8 @@ const routes: Routes = [
     TripFormCreateComponent,
     TripSearchListComponent,
     TripSearchListPageComponent,
-    TruncatePipe
+    TruncatePipe,
+    AmDifferencePipe
   ],
   imports: [
     BrowserModule,

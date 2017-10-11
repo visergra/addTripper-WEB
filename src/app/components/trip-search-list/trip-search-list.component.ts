@@ -3,6 +3,8 @@ import { Trip } from '../../shared/models/trip.model';
 import { TripService } from '../../shared/services/trip.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import {TruncatePipe} from '../../pipes/truncate.pipe';
+import {AmDifferencePipe} from '../../pipes/am-difference.pipe';
 
 @Component({
   selector: 'app-trip-search-list',
