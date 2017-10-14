@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Trip } from '../../shared/models/trip.model';
 import { User } from '../../shared/models/user.model';
+import { Application } from '../../shared/models/application.model';
 import { TripService } from '../../shared/services/trip.service';
 import { UserService } from '../../shared/services/user.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -15,20 +16,21 @@ import * as _ from 'lodash';
 export class TripDetailsComponent implements OnInit {
 tripId: string;
 trip: Trip = new Trip();
+application: Application = new Application;
 error: string;
 status: string;
 private user: User;
+indexApplication: number;
+classesDelete: Array<string> = ['fa', 'fa-3x', 'fa-times-circle-o', 'icon-disabled', 'light'];
+classesAdd: Array<string> = ['fa', 'fa-3x', 'fa-check-circle-o', 'icon-disabled', 'light'];
 
 constructor(private userService: UserService, private tripService: TripService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.activatedRoute.params.subscribe(Params => {
       this.tripId = Params['id'];
       this.getTrip();
-      this.user = JSON.parse(localStorage.getItem('user'));
-      this.status = ( _.find(this.trip.applications, { "assistant": { "_id": this.user._id}})) || 'OPEN';
-      console.log( _.find(this.trip.applications, { "assistant": { "_id": this.user._id}}));
-     ;
     });
   }
 
@@ -36,15 +38,21 @@ constructor(private userService: UserService, private tripService: TripService, 
     this.tripService.getTrip(this.tripId).subscribe(
       trip => {
         this.trip = trip;
-        console.log(trip);
-        // searchForm.reset();
+        this.getApplicationStatus();
       },
       (error) => { this.error = error; }
     );
   }
 
-  register(tripId, assistant) {
-    this.tripService.approve(tripId, assistant).subscribe(
+  getApplicationStatus(){
+    this.indexApplication = _.findIndex(this.trip.applications, {assistant: {_id: this.user._id }});
+    this.status = (this.trip.applications[this.indexApplication].status) || 'OPEN';
+    this.classesDelete.push('del'+this.status); 
+    this.classesAdd.push('add'+this.status); 
+  }
+
+  register(tripId, assistant): void {
+    this.tripService.register(tripId, assistant).subscribe(
       (trip) => {
        this.trip = trip;
       },

@@ -17,10 +17,10 @@ export class TripService {
 
   register(tripId: string, assistant: string): Observable<Trip> {
     return this.http.put(`${this.baseUrl}/trips/${tripId}/register`, JSON.stringify(assistant), this.options)
-      .map((res: Response) => {
-        return res.json();
-      })
-      .catch(this.handleError);
+    .map((res: Response) => {
+      return res.json();
+    })
+    .catch(this.handleError);
   }
 
   approve(tripId: string, assistant: string): Observable<Trip | string> {

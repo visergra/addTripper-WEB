@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       (user) => {
         this.hideModal = true;
         loginForm.reset();
-        this.router.navigate(['/inbox']);
+        this.router.navigate(['/trips']);
         location.reload();
       },
       (error) => { this.error = error; }

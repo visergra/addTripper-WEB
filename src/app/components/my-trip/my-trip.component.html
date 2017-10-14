@@ -1,0 +1,22 @@
+<div class="container header-div">
+    <div class="title-div"><h4 class="title">My trips</h4></div>
+    <div class="add-icon-div"><i class="fa fa-plus-circle fa-3x new-trip-icon" [routerLink]="['/trips/new']" aria-hidden="true"></i></div>
+  </div>
+  <div class="container search-list scrollable">
+    <div *ngFor="let trip of trips" class="list-group">
+      <a href="#" [routerLink]="['/trips', trip._id]" class="list-group-item list-group-item-action flex-column align-items-start active trip-div trip-text">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1 trip-title">{{trip.name | truncate :[45, '...']}}</h5>
+          <small class="text-muted">{{trip.start_datetime | date: "dd/MM/yyyy"}}</small>
+        </div>
+        <p class="mb-1">{{trip.description | truncate : [200, '...']}}</p>
+        <div class="container icons-div"> <div class="container owner-name-div"><small class="text-muted">{{trip.owner.name}} {{trip.owner.firstname}}</small></div>
+        <div class="container trip-icons"> 
+          <small class="text-muted trip-icons">Max. assist: {{trip.max_assistants}} <i class="fa fa-user-o" aria-hidden="true"></i></small>
+          <small class="text-muted trip-icons">   Trip days: {{trip.finish_datetime | amDifference:trip.start_datetime:'days':true}} <i class="fa fa-calendar" aria-hidden="true"></i></small>
+        </div></div>
+       
+      </a>
+    </div>
+  </div>
+  

@@ -6,8 +6,8 @@
   <div class="container application-section">
     <p class="application-title">Add tripper?</p>
     <div class="div-application-icons">
-      <div class="icon-disabled"><i class="fa fa-3x fa-times-circle-o icon-disabled light" aria-hidden="true"></i></div>
-      <div class="icon-disabled"><i class="fa fa-3x fa-check-circle-o icon-disabled light ngclassbutton-active" aria-hidden="true"></i></div>
+      <div class="icon-disabled"><i [ngClass]="classesDelete" aria-hidden="true"></i></div>
+      <div class="icon-disabled"><i (click)="register(trip._id, {assistant: user._id})" [ngClass]="classesAdd" aria-hidden="true"></i></div>
     </div>
   </div>
   <div>
@@ -22,7 +22,7 @@
       <div class="text-icons">{{trip?.location.address}}</div>
     </div>
     <div><i class="fa fa-lg fa-money icons-info light-small" aria-hidden="true"></i>
-      <div class="text-icons">{{trip?.estimated_budget | currency:'EUR':true}}</div>
+      <div name="price" class="text-icons">{{trip?.estimated_budget | currency:'EUR':true}}</div>
     </div>
     <div><i class="fa fa-lg fa-user-o icons-info" aria-hidden="true"></i>
       <div class="text-icons">Hosted by {{trip?.owner.name}} {{trip?.owner.firstname}}</div>
@@ -31,10 +31,10 @@
   <div class="container line-div"></div>
   <div class="container application-section">
     <p class="section-title">Assistants</p>
-    <div>
+    <div class="inline">
       <img src="http://localhost:3000{{trip.owner.profile_pic}}" class="img-fluid profile-pic" alt="Responsive image">
     </div>
-    <div *ngFor="let application of trip?.applications">
+    <div class="inline" *ngFor="let application of trip?.applications">
       <img *ngIf="application.status == 'APPROVED'" src="http://localhost:3000{{application.assistant.profile_pic}}" class="img-fluid profile-pic" alt="Responsive image">
     </div>
   </div>

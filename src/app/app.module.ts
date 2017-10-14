@@ -39,6 +39,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { AmDifferencePipe } from './pipes/am-difference.pipe';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { TripDetailsPageComponent } from './components/trip-details-page/trip-details-page.component';
+import { MyTripsPageComponent } from './components/my-trips-page/my-trips-page.component';
+import { MyTripComponent } from './components/my-trip/my-trip.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -53,7 +55,8 @@ const routes: Routes = [
     children: [
       { path: '', component: TripDetailsComponent },
       { path: 'edit', component: TripSearchListPageComponent }
-    ], canActivate: [IsAuthenticatedGuard] }
+    ], canActivate: [IsAuthenticatedGuard] },
+    { path: 'trips', component: MyTripsPageComponent, canActivate: [IsAuthenticatedGuard] },
 ]
 
 @NgModule({
@@ -82,7 +85,9 @@ const routes: Routes = [
     TruncatePipe,
     AmDifferencePipe,
     TripDetailsComponent,
-    TripDetailsPageComponent
+    TripDetailsPageComponent,
+    MyTripsPageComponent,
+    MyTripComponent
   ],
   imports: [
     BrowserModule,

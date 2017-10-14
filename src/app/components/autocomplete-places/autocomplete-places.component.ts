@@ -27,7 +27,7 @@ export class AutocompletePlacesComponent implements OnInit {
             this.location.type = "Point";
             this.location.coordinates = [];
             this.location.coordinates.push(Number(place.geometry.location.lng()));
-            this.location.coordinates.push(place.geometry.location.lat());
+            this.location.coordinates.push(Number(place.geometry.location.lat()));
             this.onChangeLocation();
             if (place.geometry === undefined || place.geometry === null) {
               return;
