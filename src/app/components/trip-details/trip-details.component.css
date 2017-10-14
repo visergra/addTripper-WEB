@@ -1,0 +1,129 @@
+.title-page {
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.title-page-text {
+    font-weight: 400;
+    /* opacity: 0.9; */
+    color: #32b496;
+    font-weight: 300;
+}
+
+.line-div {
+    border-bottom: 1px solid #00bfa5;
+    opacity: 0.85;
+    border-color: rgba(0, 0, 0, 0.14902);
+}
+
+.application-section {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.icon-disabled {
+    font-size: 70px;
+    -webkit-text-stroke: 5px;
+    opacity: 0.8;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.button-active{
+    color: #32b496;
+    opacity: 1;
+}
+
+.icons-info {
+    opacity: 0.7;
+    font-size: 25px;
+    color: #636c72;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 10px;
+    display: inline-block;
+    width: 30px
+}
+
+.light-small {
+    -webkit-text-stroke: 1px white;
+}
+
+.div-icon {
+    width: 30px;
+    text-align: center;
+    margin-right: 0;
+}
+
+.div-info-icons {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.div-application-icons {
+    width: 200px;
+    text-align: right;
+    right: 0;
+    display: inline-block;
+}
+
+.light {
+    -webkit-text-stroke: 8px white;
+}
+
+.outline {
+    -webkit-text-stroke: 1px red;
+}
+
+.overlap {
+    -webkit-text-stroke: 4px rgba(255, 0, 0, 1);
+}
+
+.application-title {
+    width: 160px;
+    font-size: 20px;
+    opacity: 0.9;
+    vertical-align: middle;
+    text-align: left;
+    left: 0;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    padding-left: 10px;
+    vertical-align: middle;
+    padding-top: -50px;
+    margin-top: -50px;
+}
+
+.trip-description-text {
+    color: #212121;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.text-icons{
+    display: inline-block;
+    width: 330px;
+    padding-left: 15px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.section-title{
+    margin-top: 10px;
+    color: #212121;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-bottom: 15px;
+    margin-left: 7px;
+}

@@ -15,6 +15,14 @@ export class TripService {
 
   constructor(private http: Http) { }
 
+  register(tripId: string, assistant: string): Observable<Trip> {
+    return this.http.put(`${this.baseUrl}/trips/${tripId}/register`, JSON.stringify(assistant), this.options)
+      .map((res: Response) => {
+        return res.json();
+      })
+      .catch(this.handleError);
+  }
+
   approve(tripId: string, assistant: string): Observable<Trip | string> {
     return this.http.put(`${this.baseUrl}/trips/${tripId}/approve`, JSON.stringify(assistant), this.options)
       .map((res: Response) => {
@@ -33,6 +41,12 @@ export class TripService {
 
   getTrips(lng: number, lat: number, date: Date): Observable<Array<Trip>> {
     return this.http.get(`${this.baseUrl}/trips/?lng=${lng}&lat=${lat}&startDate=${date}`, this.options)
+    .map(res => res.json())
+    .catch(this.handleError);
+  }
+
+  getTrip(tripId: string): Observable<Trip> {
+    return this.http.get(`${this.baseUrl}/trips/${tripId}`, this.options)
     .map(res => res.json())
     .catch(this.handleError);
   }

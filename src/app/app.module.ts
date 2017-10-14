@@ -37,16 +37,23 @@ import { TripSearchListComponent } from './components/trip-search-list/trip-sear
 import { TripSearchListPageComponent } from './components/trip-search-list-page/trip-search-list-page.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { AmDifferencePipe } from './pipes/am-difference.pipe';
+import { TripDetailsComponent } from './components/trip-details/trip-details.component';
+import { TripDetailsPageComponent } from './components/trip-details-page/trip-details-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'inbox', component: InboxPageComponent, canActivate: [ IsAuthenticatedGuard ] },
-  { path: 'outbox', component: OutboxPageComponent, canActivate: [ IsAuthenticatedGuard ] },
-  { path: 'trips/new', component: TripCreatePageComponent, canActivate: [ IsAuthenticatedGuard ] },
-  { path: 'trips/search', component: TripSearchListPageComponent }
+  { path: 'inbox', component: InboxPageComponent, canActivate: [IsAuthenticatedGuard] },
+  { path: 'outbox', component: OutboxPageComponent, canActivate: [IsAuthenticatedGuard] },
+  { path: 'trips/new', component: TripCreatePageComponent, canActivate: [IsAuthenticatedGuard] },
+  { path: 'trips/search', component: TripSearchListPageComponent },
+  { path: 'trips/:id', component: TripDetailsPageComponent,
+    children: [
+      { path: '', component: TripDetailsComponent },
+      { path: 'edit', component: TripSearchListPageComponent }
+    ], canActivate: [IsAuthenticatedGuard] }
 ]
 
 @NgModule({
@@ -73,7 +80,9 @@ const routes: Routes = [
     TripSearchListComponent,
     TripSearchListPageComponent,
     TruncatePipe,
-    AmDifferencePipe
+    AmDifferencePipe,
+    TripDetailsComponent,
+    TripDetailsPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 export class Location {
-        type: string;
-        coordinates: Array<number> = [];
-        address: string   
+    address: string;
+    type: string;
+    coordinates: Array<number> = [];
 }

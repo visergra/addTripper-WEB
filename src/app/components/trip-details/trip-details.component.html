@@ -1,0 +1,47 @@
+<div class="container form-div">
+  <div class="title-page">
+    <h4 class="modal-title title-page-text">{{trip?.name}}</h4>
+  </div>
+  <div class="container line-div"></div>
+  <div class="container application-section">
+    <p class="application-title">Add tripper?</p>
+    <div class="div-application-icons">
+      <div class="icon-disabled"><i class="fa fa-3x fa-times-circle-o icon-disabled light" aria-hidden="true"></i></div>
+      <div class="icon-disabled"><i class="fa fa-3x fa-check-circle-o icon-disabled light ngclassbutton-active" aria-hidden="true"></i></div>
+    </div>
+  </div>
+  <div>
+  </div>
+  <div class="container line-div"></div>
+  <div class="div-info-icons">
+    <div><i class="fa fa-lg fa-clock-o icons-info light-small" aria-hidden="true"></i>
+      <div class="text-icons">{{trip?.start_datetime | date:'mediumDate'}} {{trip?.start_datetime | date:'shortTime'}} - {{trip?.finish_datetime | date:'mediumDate'}}
+        {{trip.finish_datetime | date:'shortTime'}}</div>
+    </div>
+    <div><i class="fa fa-lg fa-map-marker icons-info light-small" aria-hidden="true"></i>
+      <div class="text-icons">{{trip?.location.address}}</div>
+    </div>
+    <div><i class="fa fa-lg fa-money icons-info light-small" aria-hidden="true"></i>
+      <div class="text-icons">{{trip?.estimated_budget | currency:'EUR':true}}</div>
+    </div>
+    <div><i class="fa fa-lg fa-user-o icons-info" aria-hidden="true"></i>
+      <div class="text-icons">Hosted by {{trip?.owner.name}} {{trip?.owner.firstname}}</div>
+    </div>
+  </div>
+  <div class="container line-div"></div>
+  <div class="container application-section">
+    <p class="section-title">Assistants</p>
+    <div>
+      <img src="http://localhost:3000{{trip.owner.profile_pic}}" class="img-fluid profile-pic" alt="Responsive image">
+    </div>
+    <div *ngFor="let application of trip?.applications">
+      <img *ngIf="application.status == 'APPROVED'" src="http://localhost:3000{{application.assistant.profile_pic}}" class="img-fluid profile-pic" alt="Responsive image">
+    </div>
+  </div>
+  <div class="container line-div"></div>
+  <div class="container application-section">
+    <p class="section-title">Description</p>
+    <p class="trip-description-text">{{trip?.description}}</p>
+  </div>
+</div>
+

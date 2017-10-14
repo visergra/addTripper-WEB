@@ -4,7 +4,7 @@
 <app-home-search-form class="collapse" id="collapseSearch"></app-home-search-form>
 <div class="container search-list scrollable">
   <div *ngFor="let trip of trips" class="list-group">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active trip-div trip-text">
+    <a href="#" [routerLink]="['/trips', trip._id]" class="list-group-item list-group-item-action flex-column align-items-start active trip-div trip-text">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1 trip-title">{{trip.name | truncate :[45, '...']}}</h5>
         <small class="text-muted">{{trip.start_datetime | date: "dd/MM/yyyy"}}</small>
