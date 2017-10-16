@@ -31,5 +31,19 @@ export class MyTripComponent implements OnInit {
       (error) => { this.error = error; }
     );
   }
-  
+
+  remove(tripId){
+    this.tripService.remove(tripId).subscribe(
+      (removed) => {
+        if (removed) {
+          this.fetchTrips();
+        } else {
+          console.log('error on delete');
+        }
+      },
+      (error) => { this.error = error; }
+    );
+  }
+
+
 }

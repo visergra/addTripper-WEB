@@ -41,22 +41,35 @@ import { TripDetailsComponent } from './components/trip-details/trip-details.com
 import { TripDetailsPageComponent } from './components/trip-details-page/trip-details-page.component';
 import { MyTripsPageComponent } from './components/my-trips-page/my-trips-page.component';
 import { MyTripComponent } from './components/my-trip/my-trip.component';
+import { TripEditComponent } from './components/trip-edit/trip-edit.component';
+import { TripEditPageComponent } from './components/trip-edit-page/trip-edit-page.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { UserDetailPageComponent } from './components/user-detail-page/user-detail-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'inbox', component: InboxPageComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'outbox', component: OutboxPageComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'trips/new', component: TripCreatePageComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'trips/search', component: TripSearchListPageComponent },
-  { path: 'trips/:id', component: TripDetailsPageComponent,
+  {
+    path: 'trips/:id',
     children: [
-      { path: '', component: TripDetailsComponent },
-      { path: 'edit', component: TripSearchListPageComponent }
-    ], canActivate: [IsAuthenticatedGuard] },
-    { path: 'trips', component: MyTripsPageComponent, canActivate: [IsAuthenticatedGuard] },
+      { path: '', component: TripDetailsPageComponent },
+      { path: 'edit', component: TripEditPageComponent }
+    ], canActivate: [IsAuthenticatedGuard]
+  },
+  { path: 'trips', component: MyTripsPageComponent, canActivate: [IsAuthenticatedGuard] },
+  {
+    path: 'users/:id',
+    children: [
+      { path: '', component: UserDetailPageComponent },
+      { path: 'edit', component: UserDetailPageComponent }
+    ], canActivate: [IsAuthenticatedGuard]
+  },
+  { path: 'trips', component: MyTripsPageComponent, canActivate: [IsAuthenticatedGuard] },
 ]
 
 @NgModule({
@@ -87,7 +100,11 @@ const routes: Routes = [
     TripDetailsComponent,
     TripDetailsPageComponent,
     MyTripsPageComponent,
-    MyTripComponent
+    MyTripComponent,
+    TripEditComponent,
+    TripEditPageComponent,
+    UserDetailComponent,
+    UserDetailPageComponent
   ],
   imports: [
     BrowserModule,

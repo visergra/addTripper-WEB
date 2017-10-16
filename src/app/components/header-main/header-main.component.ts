@@ -20,7 +20,9 @@ export class HeaderMainComponent implements OnInit {
 
   logout() {
     this.authService.logout().subscribe(
-      (ok) => { this.router.navigate(['/']); },
+      (ok) => { 
+        localStorage.removeItem('user');
+        this.router.navigate(['/home']); },
       (error) => { this.error = error; },
     );
 

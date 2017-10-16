@@ -68,10 +68,12 @@
 
 .btn-approve {
     color: #32b496;
+    padding-left: 5px;
 }
 
 .btn-reject {
     color: #F4656A;
+    padding-left: 10px;
 }
 
 .profile-pic {

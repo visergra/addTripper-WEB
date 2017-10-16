@@ -87,3 +87,14 @@
     margin: 0;
     padding: 0;
 }
+
+.action-icons-div{
+    text-align: right;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.action-icons{
+    padding-left: 20px;
+    opacity: 0.8;
+}

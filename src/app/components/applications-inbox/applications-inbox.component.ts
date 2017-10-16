@@ -27,6 +27,7 @@ export class ApplicationsInboxComponent implements OnInit {
     this.userService.getUserTrips().subscribe(
       trips => {
       this.trips =  _.filter(trips, {owner: {_id: this.user._id }})
+      // this.router.navigate(['/inbox']);
       },
       (error) => { this.error = error; }
     );
@@ -35,8 +36,7 @@ export class ApplicationsInboxComponent implements OnInit {
   approve(tripId, assistant) {
     this.tripService.approve(tripId, assistant).subscribe(
       (trip) => {
-       // this.fetchTrips();
-        location.reload();
+        this.fetchTrips();
       },
       (error) => { this.error = error; }
     );

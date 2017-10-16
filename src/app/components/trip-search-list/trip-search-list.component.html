@@ -1,7 +1,7 @@
 <div class="container">
-  <h4 class="modal-title" data-toggle="collapse" data-target="#collapseSearch" aria-expanded="false" id="signupModalLabel">Search trip <i class="fa fa-chevron-down" aria-hidden="true" title="My Trips"></i></h4>
+  <h4 class="modal-title" data-toggle="collapse" data-target="#collapseSearch" aria-expanded="true" id="signupModalLabel">Search trip <i class="fa fa-chevron-down" aria-hidden="true" title="My Trips"></i></h4>
 </div>
-<app-home-search-form class="collapse" id="collapseSearch"></app-home-search-form>
+<app-home-search-form class="collapse show" id="collapseSearch"></app-home-search-form>
 <div class="container search-list scrollable">
   <div *ngFor="let trip of trips" class="list-group">
     <a href="#" [routerLink]="['/trips', trip._id]" class="list-group-item list-group-item-action flex-column align-items-start active trip-div trip-text">

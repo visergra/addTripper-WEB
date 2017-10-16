@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import * as _ from 'lodash';
 
+
 @Component({
   selector: 'app-trip-details',
   templateUrl: './trip-details.component.html',
@@ -23,6 +24,7 @@ private user: User;
 indexApplication: number;
 classesDelete: Array<string> = ['fa', 'fa-3x', 'fa-times-circle-o', 'icon-disabled', 'light'];
 classesAdd: Array<string> = ['fa', 'fa-3x', 'fa-check-circle-o', 'icon-disabled', 'light'];
+userID: string = 'funciona';
 
 constructor(private userService: UserService, private tripService: TripService, private activatedRoute: ActivatedRoute) { }
 
@@ -46,7 +48,10 @@ constructor(private userService: UserService, private tripService: TripService, 
 
   getApplicationStatus(){
     this.indexApplication = _.findIndex(this.trip.applications, {assistant: {_id: this.user._id }});
-    this.status = (this.trip.applications[this.indexApplication].status) || 'OPEN';
+    if (this.indexApplication!=-1){
+    this.status = (this.trip.applications[this.indexApplication].status)} else { this.status = 'NOADD'}
+    this.classesDelete = ['fa', 'fa-3x', 'fa-times-circle-o', 'icon-disabled', 'light'];
+    this.classesAdd = ['fa', 'fa-3x', 'fa-check-circle-o', 'icon-disabled', 'light'];
     this.classesDelete.push('del'+this.status); 
     this.classesAdd.push('add'+this.status); 
   }
@@ -55,6 +60,7 @@ constructor(private userService: UserService, private tripService: TripService, 
     this.tripService.register(tripId, assistant).subscribe(
       (trip) => {
        this.trip = trip;
+       this.getApplicationStatus();
       },
       (error) => { this.error = error; }
     );

@@ -51,6 +51,12 @@ export class TripService {
     .catch(this.handleError);
   }
 
+  remove(tripId: string): Observable<string | Boolean> {
+    return this.http.delete(`${this.baseUrl}/trips/${tripId}`, this.options)
+    .map(res => res.status === 204)
+    .catch(this.handleError);
+  }
+
   private handleError(error: Response | any): Observable<string> {
     console.error(error);
     return Observable.throw(error.json().message);

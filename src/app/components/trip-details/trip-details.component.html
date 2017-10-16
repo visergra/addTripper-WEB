@@ -32,10 +32,10 @@
   <div class="container application-section">
     <p class="section-title">Assistants</p>
     <div class="inline">
-      <img src="http://localhost:3000{{trip.owner.profile_pic}}" class="img-fluid profile-pic" alt="Responsive image">
+      <img src="http://localhost:3000{{trip.owner.profile_pic}}" class="img-fluid profile-pic" alt="Responsive image" [routerLink]="['/users', trip.owner._id]">
     </div>
     <div class="inline" *ngFor="let application of trip?.applications">
-      <img *ngIf="application.status == 'APPROVED'" src="http://localhost:3000{{application.assistant.profile_pic}}" class="img-fluid profile-pic" alt="Responsive image">
+      <img *ngIf="application.status == 'APPROVED'" src="http://localhost:3000{{application.assistant.profile_pic}}" [routerLink]="['/users', application.assistant._id]" class="img-fluid profile-pic" alt="Responsive image">
     </div>
   </div>
   <div class="container line-div"></div>

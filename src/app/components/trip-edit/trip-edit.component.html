@@ -1,0 +1,49 @@
+<div class="container form-div">
+    <h4 class="modal-title" id="signupModalLabel">Edit trip</h4>
+    <form class="trip-form" (ngSubmit)="onSubmitTrip(tripForm)" #tripForm="ngForm">
+      <div class="form-group">
+        <label class="control-label" for="name">Name</label>
+        <input name="name" id="name" type="text" maxlength="50" class="form-control" [(ngModel)]="trip.name">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="description">Description</label> ​
+        <textarea name="description" id="description" rows="5" class="form-control" [(ngModel)]="trip.description"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="place">Place</label>
+        <app-autocomplete-places name="place" (onChange)="onTripLocationChange($event)"></app-autocomplete-places>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="startDate">Start Date</label> ​
+        <app-datepicker name="startDate" (onChange)="onTripStartDateChange($event)"></app-datepicker>
+        <ngb-timepicker name="startTime" [(ngModel)]="startTime"></ngb-timepicker>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="finishDate">Finish Date</label> ​
+        <app-datepicker name="finishDate" (onChange)="onTripFinishDateChange($event)"></app-datepicker>
+        <ngb-timepicker name="endTime" [(ngModel)]="finishTime"></ngb-timepicker>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="maxAssistants">Nº Max. Assistants</label>
+        <input name="maxAssistants" id="maxAssistants" type="number" maxlength="50" class="form-control" [(ngModel)]="trip.max_assistants">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="budget">Estimated Budget per Person</label>
+        <input name="budget" id="budget" type="number" maxlength="50" class="form-control" [(ngModel)]="trip.estimated_budget">
+      </div>
+      <div class="form-group">
+        <label class="form-check-label">
+            <input name="openReg" class="form-check-input" type="checkbox" [(ngModel)]="trip.open_registration"> Open Registration
+        </label>
+      </div>
+      <div class="error-message-signup" *ngIf="error">
+        {{error}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary btn-create-trip">Create trip</button>
+      </div>
+    </form>
+  
+  </div>
+  

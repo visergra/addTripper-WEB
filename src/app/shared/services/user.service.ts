@@ -25,6 +25,12 @@ export class UserService {
     .catch(this.handleError);
   }
 
+  getUser(userId: string): Observable<User> {
+    return this.http.get(`${this.baseUrl}/users/${this.user._id}`, this.options)
+    .map(res => res.json())
+    .catch(this.handleError);
+  }
+
   private handleError(error: Response | any): Observable<string> {
     console.error(error);
     return Observable.throw(error.json().message);

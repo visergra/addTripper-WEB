@@ -127,13 +127,13 @@
     width: 55px;
 }
 
-.addOPEN{
+.addNOADD{
     color: #32b496;
     opacity: 1;
     -webkit-text-stroke: 6px white;
 }
 
-.delAPPROVED{
+.delAPPROVED, .delOPEN{
     color: #ee6e73;
     opacity: 1;
     -webkit-text-stroke: 6px white;

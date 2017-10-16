@@ -14,7 +14,7 @@
         <a href="#" class="list-group-item list-group-item-action active message-header">{{trip.name}}    
        </a>
         <div class="list-group">
-            <a *ngFor="let application of trip?.applications" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <a *ngFor="let application of trip?.applications" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
                   <img src="http://localhost:3000{{application.assistant.profile_pic}}" class="img-fluid profile-pic" alt="Responsive image">
                 <h6 class="mb-1 profile-name">{{application.assistant.name}} {{application.assistant.firstname}}</h6>
@@ -22,12 +22,12 @@
               </div>
               <div class="application-status-div">
                   <div *ngIf="application.status == 'OPEN'" class="btn-group btn-group-sm application-status-buttons" role="group" aria-label="Approve/Reject">
-                      <button type="button" class="btn btn-secondary btn-approve" (click)="approve(trip._id, {assistant: application.assistant._id})">
-                          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                      </button>
-                      <button type="button" class="btn btn-secondary btn-reject">
-                          <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-                      </button>
+                      <!-- <button type="button" class="btn btn-secondary btn-approve" (click)="approve(trip._id, {assistant: application.assistant._id})"> -->
+                          <i class="fa fa-thumbs-up btn-approve fa-lg" aria-hidden="true" (click)="approve(trip._id, {assistant: application.assistant._id})"></i>
+                      <!-- </button> -->
+                      <!-- <button type="button" class="btn btn-secondary btn-reject"> -->
+                          <i class="fa fa-thumbs-down btn-reject fa-lg" aria-hidden="true"></i>
+                      <!-- </button> -->
                   </div>
               <small class="application-status">{{application.status}}</small>
               </div>
