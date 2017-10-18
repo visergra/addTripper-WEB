@@ -10,6 +10,9 @@
       <div class="icon-disabled"><i (click)="register(trip._id, {assistant: user._id})" [ngClass]="classesAdd" aria-hidden="true"></i></div>
     </div>
   </div>
+  <div class="alert alert-danger" *ngIf="error" role="alert">
+      <strong>Error: </strong> {{ error }}.
+    </div>
   <div>
   </div>
   <div class="container line-div"></div>

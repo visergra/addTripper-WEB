@@ -45,6 +45,8 @@ import { TripEditComponent } from './components/trip-edit/trip-edit.component';
 import { TripEditPageComponent } from './components/trip-edit-page/trip-edit-page.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { UserDetailPageComponent } from './components/user-detail-page/user-detail-page.component';
+import { CalendarPageComponent } from './components/calendar-page/calendar-page.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -52,6 +54,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'inbox', component: InboxPageComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'outbox', component: OutboxPageComponent, canActivate: [IsAuthenticatedGuard] },
+  { path: 'calendar', component: CalendarPageComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'trips/new', component: TripCreatePageComponent, canActivate: [IsAuthenticatedGuard] },
   { path: 'trips/search', component: TripSearchListPageComponent },
   {
@@ -104,7 +107,9 @@ const routes: Routes = [
     TripEditComponent,
     TripEditPageComponent,
     UserDetailComponent,
-    UserDetailPageComponent
+    UserDetailPageComponent,
+    CalendarPageComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

@@ -19,9 +19,9 @@
               <label class="control-label" for="password">Password</label>
               <input name="password" id="password" type="password" maxlength="25" class="form-control" placeholder="" length="40" [(ngModel)]="user.password" required>
             </div>
-            <div class="error-message-login" *ngIf="error">
-                {{ error }}
-            </div>
+            <div class="alert alert-danger" *ngIf="error" role="alert">
+                <strong>Error: </strong> {{ error }}.
+              </div>
 
             <p class="account-message">
               Don't have an account? <a href="#signupModal" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">Sign up</a>

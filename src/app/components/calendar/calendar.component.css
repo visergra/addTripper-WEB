@@ -1,0 +1,50 @@
+.agenda {  }
+
+/* Dates */
+.agenda .agenda-date { width: 170px; }
+
+.dayofmonth {
+  width: 40px;
+  font-size: 36px;
+  line-height: 36px;
+  float: left;
+  text-align: right;
+  margin-right: 10px; 
+}
+.shortdate {
+  font-size: 0.85em; 
+}
+
+.modal-title{
+    color: #32b496;
+    font-weight: 200;
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+
+.row {
+   
+   background-color: #f7f5f5;
+   border-color: #f7f5f5;
+   border-bottom: 1px solid #32b496;
+   vertical-align: middle;
+ }
+
+ .row-header{
+    background-color: white;
+}
+
+.center{
+    text-align: center;
+}
+
+.trip-name {
+    color: #3e5586;
+    font-weight: 400;
+}
+
+.date-column{
+    margin: 0;
+    padding: 0;
+}

@@ -7,11 +7,11 @@ import * as _ from 'lodash';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-applications-inbox',
-  templateUrl: './applications-inbox.component.html',
-  styleUrls: ['./applications-inbox.component.css']
+  selector: 'app-calendar',
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.css']
 })
-export class ApplicationsInboxComponent implements OnInit {
+export class CalendarComponent implements OnInit {
   trips: Array<Trip> = [];
   error: string;
   private user: User;
@@ -26,18 +26,9 @@ export class ApplicationsInboxComponent implements OnInit {
   fetchTrips() {
     this.userService.getUserTrips().subscribe(
       trips => {
-      this.trips =  _.orderBy(_.filter(trips, {owner: {_id: this.user._id }},{applications: [{status: 'OPEN' }]}),['start_datetime'],['asc'])
-      // this.router.navigate(['/inbox']);
-      },
-      (error) => { this.error = error; }
-    );
-  }
-
-  approve(tripId, assistant) {
-    this.tripService.approve(tripId, assistant).subscribe(
-      (trip) => {
-        this.fetchTrips();
-      },
+      this.trips = _.orderBy(_.concat(_.filter(trips, {owner: {_id: this.user._id }}), _.filter(trips, {applications: [{assistant: { _id: this.user._id }}]}, {applications: [{status: 'APPROVED'}]}) ),['start_datetime'],['asc']); 
+    console.log(this.trips);  
+    },
       (error) => { this.error = error; }
     );
   }

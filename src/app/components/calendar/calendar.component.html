@@ -1,0 +1,25 @@
+<div class="container">
+  <h4 class="modal-title">Calendar</h4>
+</div>
+
+  <div class="container agenda">
+      <div class="row row-header">
+          <div class="col-3">Date</div>
+          <div class="col-2 date-column">Time</div>
+          <div class="col-7">Trip</div>
+        </div>
+
+    <div  *ngFor="let trip of trips" class="row align-items-center row-trip">
+      <div class="col-3">
+        <div class="dayofmonth">{{trip.start_datetime | date: "dd"}}</div>
+        <div class="dayofweek">{{trip.start_datetime | date: "EEEE"}}</div>
+        <div class="shortdate text-muted">{{trip.start_datetime | date: "MMM, y"}}</div>
+      </div>
+      <div class="col-2 date-column">
+          <div class="shortdate clearfix">{{trip.start_datetime | date: "shortTime"}}</div>
+          <div class="shortdate clearfix">{{trip.finish_datetime | date: "shortTime"}}</div>
+      </div>
+      <div class="col-7 trip-name" [routerLink]="['/trips', trip._id]">{{trip.name}}</div>
+    </div>
+
+  </div>
