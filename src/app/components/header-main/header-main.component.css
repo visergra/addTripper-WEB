@@ -8,6 +8,9 @@
 .header-logo {
     color: white;
     font-size: 24px;
+    margin-right: 0;
+    padding-right: 0;
+    width: 100%;
     
 }
 
@@ -39,4 +42,10 @@
 
 #navbarTogglerDemo02 > ul > li.nav-item > a {
     color: white;
+}
+
+.logo-menu{
+    text-align: center;
+    margin:0;
+    padding: 0;
 }

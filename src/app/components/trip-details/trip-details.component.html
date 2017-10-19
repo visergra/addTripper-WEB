@@ -6,7 +6,7 @@
   <div class="container application-section">
     <p class="application-title">Add tripper?</p>
     <div class="div-application-icons">
-      <div class="icon-disabled"><i [ngClass]="classesDelete" aria-hidden="true"></i></div>
+      <div class="icon-disabled"><i (click)="unregister(trip._id, {assistant: user._id})" [ngClass]="classesDelete" aria-hidden="true"></i></div>
       <div class="icon-disabled"><i (click)="register(trip._id, {assistant: user._id})" [ngClass]="classesAdd" aria-hidden="true"></i></div>
     </div>
   </div>

@@ -42,4 +42,13 @@ export class ApplicationsInboxComponent implements OnInit {
     );
   }
 
+  reject(tripId, assistant) {
+    this.tripService.reject(tripId, assistant).subscribe(
+      (trip) => {
+        this.fetchTrips();
+      },
+      (error) => { this.error = error; }
+    );
+  }
+
 }

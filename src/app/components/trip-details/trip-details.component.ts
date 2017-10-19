@@ -66,6 +66,16 @@ constructor(private userService: UserService, private tripService: TripService, 
     );
   }
 
+  unregister(tripId, assistant): void {
+    this.tripService.unregister(tripId, assistant).subscribe(
+      (trip) => {
+       this.trip = trip;
+       this.getApplicationStatus();
+      },
+      (error) => { this.error = error; }
+    );
+  }
+
 }
 
 

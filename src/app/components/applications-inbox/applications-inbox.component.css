@@ -41,10 +41,21 @@
     text-align: left;
 }
 
-.application-status {
+.OPEN {
     font-weight: bold;
-    color: #52487a;
     color: #01579b;
+    font-weight: 400;
+}
+
+.APPROVED {
+    font-weight: bold;
+    color: #32b496;
+    font-weight: 400;
+}
+
+.REJECT {
+    font-weight: bold;
+    color: #F4656A;
     font-weight: 400;
 }
 .tabs-inbox{

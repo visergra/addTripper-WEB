@@ -23,8 +23,24 @@ export class TripService {
     .catch(this.handleError);
   }
 
+  unregister(tripId: string, assistant: string): Observable<Trip> {
+    return this.http.put(`${this.baseUrl}/trips/${tripId}/unregister`, JSON.stringify(assistant), this.options)
+    .map((res: Response) => {
+      return res.json();
+    })
+    .catch(this.handleError);
+  }
+
   approve(tripId: string, assistant: string): Observable<Trip | string> {
     return this.http.put(`${this.baseUrl}/trips/${tripId}/approve`, JSON.stringify(assistant), this.options)
+      .map((res: Response) => {
+        return res.json();
+      })
+      .catch(this.handleError);
+  }
+
+  reject(tripId: string, assistant: string): Observable<Trip | string> {
+    return this.http.put(`${this.baseUrl}/trips/${tripId}/reject`, JSON.stringify(assistant), this.options)
       .map((res: Response) => {
         return res.json();
       })

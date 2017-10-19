@@ -24,13 +24,13 @@
               <div class="application-status-div">
                   <div *ngIf="application.status == 'OPEN'" class="btn-group btn-group-sm application-status-buttons" role="group" aria-label="Approve/Reject">
                       <!-- <button type="button" class="btn btn-secondary btn-approve" (click)="approve(trip._id, {assistant: application.assistant._id})"> -->
-                          <i class="fa fa-times-circle-o btn-approve fa-3x light" aria-hidden="true" (click)="approve(trip._id, {assistant: application.assistant._id})"></i>
+                          <i class="fa fa-check-circle-o btn-approve fa-3x light" aria-hidden="true" (click)="approve(trip._id, {assistant: application.assistant._id})"></i>
                       <!-- </button> -->
                       <!-- <button type="button" class="btn btn-secondary btn-reject"> -->
-                          <i class="fa fa-check-circle-o btn-reject fa-3x light" aria-hidden="true"></i>
+                          <i class="fa fa-times-circle-o btn-reject fa-3x light" aria-hidden="true" (click)="reject(trip._id, {assistant: application.assistant._id})"></i>
                       <!-- </button> -->
                   </div>
-              <small class="application-status">{{application.status}}</small>
+              <small [ngClass]="application.status">{{application.status}}</small>
               </div>
             </a>
           </div>
